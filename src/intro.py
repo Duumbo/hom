@@ -279,7 +279,7 @@ class HongOuMendel(Slide):
         ReplacementTransform(prob, title)
         )
         pog = Tex(r"$\psi(x_1,x_2)=\psi(x_2,x_1)$")
-        adag = Tex(r"$|0\rangle\qquad\qquad a\dagger|0\rangle\qquad\qquad a^\dagger a^\dagger|0\rangle$")
+        adag = Tex(r"$|0\rangle\qquad\qquad a^\dagger|0\rangle\qquad\qquad a^\dagger a^\dagger|0\rangle$")
         adag.next_to(pog, direction=DOWN)
 
         self.play(
@@ -292,6 +292,12 @@ class HongOuMendel(Slide):
         self.play(
         ReplacementTransform(adag, adagn)
         )
+        self.next_slide()
+        prop1 = Tex(r"$a_1^\dagger a_2^\dagger=a_2^\dagger a_1^\dagger$")
+        prop1.next_to(adagn, direction=DOWN)
+        self.play(FadeIn(prop1))
+        self.next_slide()
+        self.remove(prop1)
 
         titlen = Text("Fermions")
         titlen.to_edge(LEFT, buff=1)
@@ -312,5 +318,15 @@ class HongOuMendel(Slide):
         self.play(
         ReplacementTransform(adag, adagn)
         )
+        self.next_slide()
+        prop1 = Tex(r"$c_1^\dagger c_2^\dagger=-c_2^\dagger c_1^\dagger$")
+        prop1.next_to(adagn, direction=DOWN)
+        self.play(FadeIn(prop1))
+        prop2 = Tex(r"$c_1^\dagger c_1^\dagger=0$")
+        prop2.next_to(prop1, direction=DOWN)
+        self.play(FadeIn(prop2))
+        self.next_slide()
+        self.remove(prop1)
+        self.remove(prop2)
 
         self.wait()

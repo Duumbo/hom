@@ -1,0 +1,94 @@
+\Boxed{L'effet Hong-Ou-Mendel}
+
+\question{A}{
+    Introduction
+}
+
+Une des plus grandes avancées de la thermodynamique est la démonstration de ce
+que l'on nomme le théorème spin-statistique. Ce théorème a pour effet de
+séparer les particules en deux catégories, soit les bosons ou les fermions.\\
+
+Les propriétés de chaque type sont assez différentes, tel que les personnes
+derrière les noms de celles-ci. On disait d'Enrico Fermi qu'il était un peu
+une tête brûlée; il est le père de la fission nucléaire. Ses expériences étaient
+très importantes, mais non sans risque. Une blague qui circulait dans son laboratoire
+lors de son travail sur les "piles": "Si les gens pouvaient voir ce que nous
+faisons avec 1.5 M\$, ils nous trouveraient fous. S'ils savaient pourquoi nous
+le faisons, ils auraient raison."\cite{fermi1}\cite{fermi2}\\
+
+D'un autre côté, Satyendra Nath Bose aurait été qualifié autrement. Après avoir
+redérivée les coefficients de la loi de Planck et envoyé ses résultats à Einstein,
+Bose est allé en Europe pour en apprendre plus sur la radioactivité dans le
+laboratoire de Curie. Le laboratoire étant français, Curie lui aurait fait un
+long exposé sur l'importance de savoir parler français. Il aurait ensuite appris
+le français, mais n'en aurait jamais parlé à Curie, qui l'aurait sans doute accepté
+comme assistant.\cite{bose1}\cite{bose2}.
+
+\question{B}{
+    Partie 1: Symétrisation et Anti-Symétrisation
+}
+
+Au même titre que les deux personnes d'après lesquelles ces particules tiennent
+leur nom, les bosons et les fermions ont des propriétés opposées.
+
+Prenons pour exemple le problème suivant, deux particules identiques entrent en collision
+puis partent de leur côté. Comment savoir quelle trajectoire la particule à prise?
+On ne peut pas le savoir, c'est ce que l'on nomme la dégénérescence d'échange\cite{senech}.
+Il y a moyen de passer à côté de ce problème. En mécanique quantique, un outil
+qui permet de donner un sens à la position d'une particule est la fonction
+d'onde. On relie la probabilité que la particule se trouve dans un intervalle
+de position comme
+
+\begin{align}
+    P(I)&=\int_I\abs{\psi(x)}^2\dd x\qquad I,\ \text{un intervalle}
+\end{align}
+
+On peut représenter mathématiquement la dégénérescence d'échange comme le fait
+que la probabilité avant l'échange doit être la même que la probabilité après
+l'échange. Il apparaît donc deux solutions possibles, soit que la fonction
+d'onde ne change pas sous l'échange, soit que la fonction d'onde prenne un signe
+négatif. C'est ici que les fermions, ceux que la fonction d'onde prend un signe
+négatif, se démarquent des bosons, ceux que la fonction d'onde reste inchangée.
+
+\question{C}{
+    Partie 2: Effet Hong-Ou-Mendel
+}
+
+Une petite description de l'effet HOM. Comment faire l'expérience qui permet
+de mesurer l'effet HOM.
+Présentation d'un montage expérimental\cite{hom1}\cite{hom2}\cite{hom3}.
+L'élément clef dans l'effet HOM, c'est le fait que la lame partiellement réfléchissante
+l'est à 50\%.
+
+Pour des bosons, la transformation se fait
+
+\begin{align}
+    a_1^\dagger&=\frac1{\sqrt{2}}\qty(b_1^\dagger+b_2^\dagger)\\
+    a_2^\dagger&=\frac1{\sqrt{2}}\qty(b_1^\dagger-b_2^\dagger)\\
+    a_1^\dagger a_2^\dagger&=\frac12\qty(\qty(b_1^\dagger)^2-\qty(b_2^\dagger)^2+b_1^\dagger b_2^\dagger-b_2^\dagger b_1^\dagger)\\
+    [b_1^\dagger,b_2^\dagger]=0\\
+    a_1^\dagger a_2^\dagger&=\frac12\qty(\qty(b_1^\dagger)^2-\qty(b_2^\dagger)^2)
+\end{align}
+
+Pour des fermions, la transformation se fait
+
+\begin{align}
+    c_1^\dagger&=\frac1{\sqrt{2}}\qty(d_1^\dagger+d_2^\dagger)\\
+    c_2^\dagger&=\frac1{\sqrt{2}}\qty(d_1^\dagger-d_2^\dagger)\\
+    c_1^\dagger c_2^\dagger&=\frac12\qty(\qty(d_1^\dagger)^2-\qty(d_2^\dagger)^2+d_1^\dagger d_2^\dagger-d_2^\dagger d_1^\dagger)\\
+    \qty(d_i\dagger)^2&=0\\
+    \{d_1^\dagger,d_2^\dagger\}=0\\
+    c_1^\dagger c_2^\dagger&=d_1^\dagger d_2^\dagger
+\end{align}
+
+\question{E}{
+    Conclusion
+}
+
+Pour conclure, l'apparition de l'effet HOM est directement liée à l'existence
+des bosons. On peut utiliser l'effet HOM pour quantifier la qualité d'une source
+de photons unique. Est-ce que l'effet HOM existe pour les électrons?
+
+
+\clearpage
+

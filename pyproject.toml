@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "hongoumandel"
+version = "0.1.0"
+description = ""
+authors = ["Dimitri Bonanni-Surprenant <bonanni1496dimitri@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11, <3.12"
+numpy = "^1.26.2"
+manim = "^0.18.0"
+manim-slides = "^5.0.0"
+scipy = "^1.11.4"
+PyQt6 = "^6.6.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
