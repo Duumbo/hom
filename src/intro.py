@@ -240,6 +240,7 @@ class HongOuMendel(Slide):
         path4.add_updater(update_path)
         self.add(path4, dot4)
         self.play(MoveAlongPath(dot1, curve1), MoveAlongPath(dot2, curve2), MoveAlongPath(dot3, curve3), MoveAlongPath(dot4, curve4))
+        self.next_slide()
 
         self.remove(path1, path2, path3, path4, dot1, dot2, dot3, dot4, vitesse, vitesse2)
 
@@ -328,5 +329,168 @@ class HongOuMendel(Slide):
         self.next_slide()
         self.remove(prop1)
         self.remove(prop2)
+
+        title = Text("L'expérience")
+        title.to_edge(LEFT, buff=1)
+        title.to_edge(UP)
+        title.scale(0.8)
+        self.play(
+                FadeOut(prop1),
+                FadeOut(prop2),
+                FadeOut(adagn),
+                FadeOut(pogn),
+        ReplacementTransform(titlen, title)
+                )
+
+        a1 = Arrow(start=6*LEFT, end = 2*LEFT)
+        a2 = Arrow(start=4*UP, end = 2*UP)
+        b1 = Arrow(start=2*RIGHT, end = 6*RIGHT)
+        b2 = Arrow(start=2*DOWN, end = 4*DOWN)
+
+        mirror = Line(start = UP + LEFT, end = DOWN + RIGHT)
+        self.play(
+                FadeIn(a1),
+                FadeIn(a2),
+                FadeIn(b1),
+                FadeIn(b2),
+                FadeIn(mirror),
+                )
+        self.next_slide()
+
+        starting_points = VGroup(
+            *[
+                Dot(6*LEFT, color=RED)
+            ]
+        )
+
+        finish_points = VGroup(
+            *[
+                Dot(ORIGIN, color=RED)
+            ]
+        )
+
+        self.add(starting_points)
+        self.add(finish_points)
+        for dot in starting_points:
+            self.add(TracedPath(dot.get_center, stroke_color=dot.get_color()))
+
+        self.wait()
+        self.play(
+            Transform(
+                starting_points,
+                finish_points,
+                path_func=utils.paths.straight_path(),
+                run_time=2,
+            )
+        )
+
+        starting_points = VGroup(
+            *[
+                Dot(ORIGIN, color=RED),
+                Dot(ORIGIN, color=RED)
+            ]
+        )
+
+        finish_points = VGroup(
+            *[
+                Dot(6*RIGHT, color=RED),
+                Dot(4*DOWN, color=RED),
+            ]
+        )
+
+        self.add(starting_points)
+        self.add(finish_points)
+        for dot in starting_points:
+            self.add(TracedPath(dot.get_center, stroke_color=dot.get_color()))
+
+        self.wait()
+        self.play(
+            Transform(
+                starting_points,
+                finish_points,
+                path_func=utils.paths.straight_path(),
+                run_time=2,
+            )
+        )
+        self.next_slide()
+
+        starting_points = VGroup(
+            *[
+                Dot(4*UP, color=RED)
+            ]
+        )
+
+        finish_points = VGroup(
+            *[
+                Dot(ORIGIN, color=RED)
+            ]
+        )
+
+        self.add(starting_points)
+        self.add(finish_points)
+        for dot in starting_points:
+            self.add(TracedPath(dot.get_center, stroke_color=dot.get_color()))
+
+        self.wait()
+        self.play(
+            Transform(
+                starting_points,
+                finish_points,
+                path_func=utils.paths.straight_path(),
+                run_time=2,
+            )
+        )
+
+        starting_points = VGroup(
+            *[
+                Dot(ORIGIN, color=RED),
+                Dot(ORIGIN, color=RED)
+            ]
+        )
+
+        finish_points = VGroup(
+            *[
+                Dot(6*RIGHT, color=RED),
+                Dot(4*DOWN, color=RED),
+            ]
+        )
+
+        self.add(starting_points)
+        self.add(finish_points)
+        for dot in starting_points:
+            self.add(TracedPath(dot.get_center, stroke_color=dot.get_color()))
+
+        self.wait()
+        self.play(
+            Transform(
+                starting_points,
+                finish_points,
+                path_func=utils.paths.straight_path(),
+                run_time=2,
+            )
+        )
+        self.next_slide()
+        self.play(*[FadeOut(mob) for mob in self.mobjects])
+
+        b1 = Tex(r"$a^\dagger_1=\frac1{\sqrt{2}}(b^\dagger_1+b^\dagger_2)\qquad a^\dagger_2=\frac1{\sqrt{2}}(b^\dagger_1-b^\dagger_2)$")
+        b2 = Tex(r"$a^\dagger_1a^\dagger_2=\frac12((b^\dagger_1)^2-(b^\dagger_2)^2+b^\dagger_1b^\dagger_2-b^\dagger_2b^\dagger_1)$")
+        b3 = Tex(r"$2a^\dagger_1a^\dagger_2=(b^\dagger_1)^2-(b^\dagger_2)^2$")
+        b2.next_to(b1, direction=DOWN)
+        b3.next_to(b2, direction=DOWN)
+        self.play(FadeIn(b1))
+        self.play(FadeIn(b2))
+        self.play(FadeIn(b3))
+
+        self.next_slide()
+        self.play(*[FadeOut(mob) for mob in self.mobjects])
+
+        b1 = Tex(r"$c^\dagger_1=\frac1{\sqrt{2}}(d^\dagger_1+d^\dagger_2)\qquad d^\dagger_2=\frac1{\sqrt{2}}(d^\dagger_1-d^\dagger_2)$")
+        b2 = Tex(r"$c^\dagger_1c^\dagger_2=\frac12((d^\dagger_1)^2-(d^\dagger_2)^2+d^\dagger_1d^\dagger_2-d^\dagger_2d^\dagger_1)$")
+        b3 = Tex(r"$c^\dagger_1c^\dagger_2=d^\dagger_1d^\dagger_2$")
+        b2.next_to(b1, direction=DOWN)
+        b3.next_to(b2, direction=DOWN)
+        self.play(FadeIn(b1))
+        self.play(FadeIn(b2))
+        self.play(FadeIn(b3))
 
         self.wait()
